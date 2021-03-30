@@ -1,9 +1,13 @@
 package model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 
 @Entity
@@ -19,6 +23,15 @@ public class UsuarioPessoa {
 	private String login;
 	private String senha;
 	
+	@OneToMany(mappedBy = "usuarioPessoa", fetch = FetchType.EAGER)
+	private List<TelefoneUser> telefoneUsers;
+	
+	public void setTelefoneUsers(List<TelefoneUser> telefoneUsers) {
+		this.telefoneUsers = telefoneUsers;
+	}
+	public List<TelefoneUser> getTelefoneUsers() {
+		return telefoneUsers;
+	}
 
 	public long getId() {
 		return id;

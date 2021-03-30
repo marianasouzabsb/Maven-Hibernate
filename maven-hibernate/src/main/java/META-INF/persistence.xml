@@ -8,6 +8,7 @@
 	<persistence-unit name="maven-hibernate">
 	
 	<class>model.UsuarioPessoa</class>
+	<class>model.TelefoneUser</class>
 
 		<!-- Dados de Conexão com banco Postgresql -->
 
