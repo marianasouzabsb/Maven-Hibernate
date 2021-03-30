@@ -6,6 +6,8 @@
 
 
 	<persistence-unit name="maven-hibernate">
+	
+	<class>model.UsuarioPessoa</class>
 
 		<!-- Dados de Conexão com banco Postgresql -->
 
@@ -20,7 +22,9 @@
 				value="postgres" />
 			<property name="hibernate.connection.password"
 				value="347812" />
-			<property name="hibernate.hbm2dll.auto" value="update" />
+				<property name="hibernate.show_sql" value="true" />
+				<property name="hibernate.format_sql" value="true"/>
+			<property name="hibernate.hbm2ddl.auto" value="create" />
 		</properties>
 
 	</persistence-unit>
